@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+        <title>Joman's Secret Santa!</title>
+        <link rel='stylesheet' type='text/css' href='/main.css'></link>
+        <script>
+            window.addEventListener('load', function() {
+                var edits = Array.from(document.getElementsByClassName('e'));
+                var saved = localStorage.getItem('edits');
+                if (saved) {
+                    saved = JSON.parse(saved);
+                    edits.forEach(function(e) {
+                        e.textContent = saved.shift();
+                    });
+                }
+                edits.forEach(function(e) {
+                    e.addEventListener('input', function() {
+                        localStorage.setItem('edits', JSON.stringify(edits.map(function(ee) { return ee.textContent })));
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>Decrypt It</h1>
+
+            <p><em>note: you can type in the cells and your work will automatically be saved</em></p>
+
+            <table id='cross'>
+<tr><td class=f></td><td><div class=n>1</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>2</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>3</div><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div class=n>4</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>5</div><div contenteditable=true class=e></div></td><td><div class=n>6</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td><div class=n>7</div><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td class=f></td><td class=f></td><td><div class=n>8</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+<tr><td><div class=n>9</div><div contenteditable=true class=e></div></td><td><div class=n>10</div><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>11</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>12</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>13</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td><div class=n>14</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+<tr><td><div class=n>15</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>16</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>17</div><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+<tr><td class=f></td><td><div class=n>18</div><div contenteditable=true class=e></div></td><td><div class=n>19</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>20</div><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>21</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>22</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>23</div><div contenteditable=true class=e></div></td></tr>
+<tr><td class=f></td><td><div class=n>24</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>25</div><div contenteditable=true class=e></div></td><td><div class=n>26</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>27</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td><div class=n>28</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>29</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>30</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+<tr><td><div class=n>31</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>32</div><div contenteditable=true class=e></div></td><td><div class=n>33</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+<tr><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>34</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>35</div><div contenteditable=true class=e></div></td><td><div class=n>36</div><div contenteditable=true class=e></div></td></tr>
+<tr><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div class=n>37</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td><div class=n>38</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>39</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div class=n>40</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div class=n>41</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td class=f></td><td><div class=n>42</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div contenteditable=true class=e></div></td></tr>
+<tr><td><div class=n>43</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td><td class=f></td><td><div class=n>44</div><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td><div contenteditable=true class=e></div></td><td class=f></td></tr>
+            </table>
+
+            <p><strong>Across</strong></p>
+            <ol>
+                <li value=1>First I turned into you, prince (5)</li>
+                <li value=4>Spoke enumeration for composer (5)</li>
+                <li value=8>First of stepchildren with direction (2)</li>
+                <li value=9>Last of stepchildren with direction (2)</li>
+                <li value=11>A sliver around them in France! (10)</li>
+                <li value=14>...but I become huge snow monster (4)</li>
+                <li value=15>Eleventh Greek letter (2)</li>
+                <li value=16>Headless Bruce Banner with frigid heart is funny (5)</li>
+                <li value=18>Last footmen serve wingless bundle of neurons (4)</li>
+                <li value=21>In North America, heartless Aztecs take off south and become South American culture (5)</li>
+                <li value=24>Are you a country code? (2)</li>
+                <li value=25>Tracks Seine flowing with frustrated sound and extreme noise (9)</li>
+                <li value=28>Scratched almost zero unopened okra tubs at first; half of zero later (9)</li>
+                <li value=30>Rudest outsiders post other users' content on social media (2)</li>
+                <li value=31>Vehicle with undefined behavior added to Zelda game (1-4)</li>
+                <li value=32>Web of about ten integers (4)</li>
+                <li value=34>Origins of today's religions interpreted as geological period (5)</li>
+                <li value=35>Where are Waterloo's borders? (2)</li>
+                <li value=37>Even seashell can be donkey (4)</li>
+                <li value=38>No flying without first going and plotting a course (10)</li>
+                <li value=41>In the interim, evacuated (2)</li>
+                <li value=42>Pomeranian's two heads and butt (2)</li>
+                <li value=43>Stubborn king comes first to waterway (5)</li>
+                <li value=44>Video game company loses head following initial tax (5)</li>
+            </ol>
+
+            <p><strong>Down</strong></p>
+            <ol>
+                <li value=2>American Midnight Rider reported hunting ground (6)</li>
+                <li value=3>Door to unmarked region, primarily (3)</li>
+                <li value=5>Local man's dross ends up becoming security protocol used on the Internet (3)</li>
+                <li value=6>Mysterious wizard/witch Zee, without doctor, produces number of article of (20D, 39D, 11A) relevant to five of the across clues (4,4,4)</li>
+                <li value=7>Gemstone on axes (4)</li>
+                <li value=10>Dad, after fermented wine and beer, becomes dad of grapevines invented by crossword setter to save their really bad fill (12)</li>
+                <li value=12>Maybe tallest bus is "A", "I", or "U", for example (10)</li>
+                <li value=13>Irishwomen and Irene mostly in possession of inn (7)</li>
+                <li value=17>Gave bag back (3)</li>
+                <li value=19>Oy, Greek letter sounds like currency (4)</li>
+                <li value=20>Half-vertical cloth represents agreement (7)</li>
+                <li value=22>Delicate and fickle tzar (4)</li>
+                <li value=23>On a new beginning (2)</li>
+                <li value=26>Donkey noise set back scientific field encompassing machine learning (2)</li>
+                <li value=27>Gamer's abbreviation for puzzle game involving 2D character who can rotate a 3D world is not loud (2)</li>
+                <li value=28>To reverse endless buzz (2)</li>
+                <li value=29>Feces found in park otherwise (3)</li>
+                <li value=33>Flatter bed without foot collected by René going back (6)</li>
+                <li value=36>Elmo, freaking out, reveals cave-dwelling salamanders (4)</li>
+                <li value=39>Relating to 50 first names (3)</li>
+                <li value=40>Is it eating tasty core? (3)</li>
+            </ol>
+
+        </main>
+    </body>
+</html>

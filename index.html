@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+        <title>Joman's Secret Santa!</title>
+        <link rel='stylesheet' type='text/css' href='/main.css'></link>
+        <script type='text/javascript' src='sjcl.js'></script>
+        <script type='text/javascript'>
+            var correct = [
+                '94a6881a8c10faa7695d8e0902dde31f56d73189de5ba18f15437578d8f6b3cf',
+                '727f5a641328d161d38f89862f0746f1e15c3a6a15496d0e49d0366280ccbea0',
+                '91eb9b6366d2e85549c4ca71c2ccc2b39cdc0dfbd3c8379858e4997881c92e58',
+                '258295b1d47de3d6b935c385692e5b9d811f71785fd6cd58b6dbb3e142e40d6b',
+                '90f668829b7503a0fd8ca4b1884b1e894613604eff8558883f1d883708938899',
+                0,
+                'aa67dff319b9fdad3e9a3593f3a22dfac7d7b68822891637893dae2f701b966a'
+            ];
+            window.addEventListener('load', function() {
+                var ans = document.getElementById('ans');
+                document.getElementsByTagName('form')[0].addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    doGuess(ans.value.toUpperCase().replace(/[^A-Z]/g, ''), 'update');
+                    ans.value = '';
+                });
+                (localStorage.getItem('solved') || '').split(',').forEach(doGuess);
+            });
+            function doGuess(guess, update) {
+                var hash = sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash('secretsolver'+guess)),
+                    tbl = document.getElementById('puzzles').children[0];
+                for (var i = 0; i < correct.length; ++i) {
+                    if (hash == correct[i]) {
+                        tbl.children[i].children[2].textContent = guess;
+                        if (update === 'update') {
+                            var solved = localStorage.getItem('solved');
+                            solved = solved ? solved.split(',') : [];
+                            if (solved.indexOf(guess) === -1) solved.push(guess);
+                            localStorage.setItem('solved', solved.join(','));
+                        }
+                        break;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>A Message From Santa</h1>
+            <p><em>Santa has a message for you, but it's still on its way from the North Pole... the reindeer are running as fast as they can! The message will appear here when it arrives.</em></p>
+            <form style='padding:30px 0'>Call in an answer: <input id='ans'><input type='submit' value='check'></form>
+            <table id='puzzles'>
+                <tbody>
+                    <tr>
+                        <th>&bull;</th>
+                        <td><a href='AMusicalConundrum'>A Musical Conundrum</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>&bull;</th>
+                        <td><a href='AdventureOfPhotos'>Adventure of Photos</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>&bull;</th>
+                        <td><a href='DecryptIt'>Decrypt It</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>&bull;</th>
+                        <td><a href='FamiliarFaces'>Familiar Faces</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>&bull;</th>
+                        <td><a href='ScrambledEggs'>Scrambled Eggs</a></td>
+                        <td></td>
+                    </tr>
+                    <tr><th></th><td>&nbsp;</td><td></td></tr>
+                    <tr>
+                        <th>&bull;</th>
+                        <td>A Message From Santa</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

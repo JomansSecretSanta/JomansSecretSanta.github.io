@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+        <title>Joman's Secret Santa!</title>
+        <link rel='stylesheet' type='text/css' href='/main.css'></link>
+    </head>
+    <body>
+        <main>
+            <h1>Adventure of Photos</h1>
+            <pre><code>--- Day 26: Intriguing Images ---
+
+As it turns out, the soft-serve machine isn't quite working as expected. You
+thought you fixed it, and while it does produce soft-serve now, the labels on
+the buttons are all broken and not displaying correctly. This makes for a very
+poor user experience, so Santa is requesting that you quickly patch it before
+leaving.
+
+It sounds like a simple fix to you at first, but you soon realize that the
+image encoding that the soft-serve machine uses is very... unusual. After a bit
+of fiddling, you're able to deduce that it at least stores images in the
+familiar <strong>RGB hexadecimal format</strong>, but it's very primitive in that it simply
+lists <strong>pixels in order, left to right and top to bottom</strong>.
+
+To make matters worse, it seems like the programmers haven't even bothered to
+specify the <strong>dimensions of the images</strong>. You're not sure how the machine knows how
+many pixels go on each row... maybe it has something to do with enforcing a
+<strong>reasonable aspect ratio</strong> or something.
+
+As if that's not bad enough, there appears to be some kind of preprocessing
+step. The <strong>first line of every image file</strong> contains an instruction or program of
+some sort, which gets <strong>applied to each individual byte</strong> (the red, green, and blue
+values) of each pixel. For example, if one of the pixels is given as <em>dd8810</em>,
+then its actual red, green, and blue values are <em>f(0xdd)</em>, <em>f(0x88)</em>, and <em>f(0x10)</em>
+respectively (where <em>f</em> is the function given by the first line). You have no
+idea why images are possibly implemented this way -- maybe it's some sort of
+barebones "security" measure? Whatever the reason, it's very... <strong>esoteric</strong>.
+
+Anyway, here are a few example image files, and what they're supposed to look
+like (enlarged for your convenience):
+
+<div>+
+feffff
+fffeff
+fffffe
+ffffff</div> <img src='ex1.png' alt='left to right, and top to bottom: red, green, blue, black' title='left to right, and top to bottom: red, green, blue, black'>
+
+<div>[--&gt;+&lt;]&gt;
+fe0000
+00fe00
+0000fe
+fefefe</div> <img src='ex2.png' alt='left to right, and top to bottom: dark red, dark green, dark blue, gray' title='left to right, and top to bottom: dark red, dark green, dark blue, gray'>
+
+<div>&gt;------------------------------
+012345
+abcdef
+654321
+aaaaaa</div> <img src='ex3.png' alt='whole image is light gray' title='whole image is light gray'>
+
+Wow, these programs are really hurting your <strong>brain</strong>.
+
+There appears to be one last, much larger image which a previous developer left
+behind for documentation purposes. From what you've seen, you're guessing it
+has to do with the programming language that the soft-serve machine is running.
+Its source code looks like gibberish to you and you haven't been able to figure
+out what language it is, but if you can, you think you'll have a very good shot 
+at debugging the issue.
+
+<strong>What programming language is the <span title='Or soft-serve-ware, if you will.' style='border-bottom: 1px dotted #000'>soft-serve machine's software</span> written in?</strong>
+
+To begin, <a href='https://drive.google.com/file/d/1nJu4uWijaMzQTu45KCPog_75_GZo-Ia9/view'>get your puzzle input</a>.
+        </main>
+    </body>
+</html>
